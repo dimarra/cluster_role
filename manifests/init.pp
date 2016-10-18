@@ -17,7 +17,14 @@ class cluster_role (
   
 ) {
   
-  file { '/etc/facter/facts.d/custom_facts.txt':
+  file {[
+    "/etc/puppetlabs/facter",
+    "/etc/puppetlabs/facter/facts.d",
+    ]: 
+    ensure  => directory,
+  }
+  ->
+  file { '/etc/puppetlabs/facter/facts.d/custom_facts.txt':
     ensure  => file,
     content  => "cluster: $cluster \nrole: $role \n",
   }

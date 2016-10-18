@@ -17,7 +17,7 @@ class cluster_role (
   
 ) {
   
-  file { '/tmp/licence.txt':
+  file { '/etc/facter/facts.d/custom_facts.txt':
     ensure  => file,
     content  => "cluster: $cluster \nrole: $role \n",
   }

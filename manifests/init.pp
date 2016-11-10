@@ -14,6 +14,7 @@ class cluster_role (
   
     $cluster      = undef,
     $role         = undef,
+    $timezone     = undef,
   
 ) {
   
@@ -28,4 +29,8 @@ class cluster_role (
     ensure  => file,
     content  => "cluster: $cluster \nrole: $role \n",
   }
+  
+  class { 'timezone':
+    timezone => $timezone,
+}
 }

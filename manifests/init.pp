@@ -14,7 +14,7 @@ class cluster_role (
   
     $cluster      = undef,
     $role         = undef,
-    $timezone     = undef,
+    $timezone     = 'Australia/Melbourne',
   
 ) {
   

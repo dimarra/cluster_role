@@ -28,6 +28,7 @@ class cluster_role (
   file { '/etc/puppetlabs/facter/facts.d/custom_facts.yaml':
     ensure  => file,
     content  => "cluster: $cluster \nrole: $role \n",
+    mode   => '0444',
   }
   
   class { 'timezone':
